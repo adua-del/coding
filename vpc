@@ -37,7 +37,7 @@ resource "aws_subnet" "Prod_VPC_Private_Subnet" {
   #count_AZ = "${length(var.Prod_Private_AZ)}"
   vpc_id = "${aws_vpc.Prod_VPC.id}"
   cidr_block       = "${var.Prod_Private_AZ[count.index]}"
-  availability_zone = "üs-east-1c"
+  availability_zone = "${var.Prod_Private_AZ[count.index]}"
   tags = {
     Name = "Prod_VPC_Private_subnet"
   }
