@@ -1,0 +1,39 @@
+variable "vpc_cidr" {
+  description = "VPC CIDR"
+  default = "10.16.0.0/16"
+}
+variable "vpc_cidr1" {
+  description = "Prod VPC CIDR"
+  default = "192.168.0.0/16"
+}
+variable "prod_public_subnet" {
+  description = "Prod Public Subnet"
+  default = ["192.168.1.0/24" , "192.168.4.0/24"]
+  type = "list"
+}
+variable "prod_private_subnet" {
+  description = "Prod Private Subnet"
+  default = ["192.168.2.0/24" , "192.168.3.0/24"]
+  type = "list"
+}
+variable "dev_private_subnet" {
+  default = ["10.16.1.0/24", "10.16.3.0/24"]
+  type = "list"
+}
+variable "dev_public_subnet" {
+  default = ["10.16.2.0/24", "10.16.4.0/24"]
+  type = "list"
+}
+variable "Prod_Public_AZ" {
+  default = ["us-east-1a","us-east-1b"]
+  type = "list"
+}
+variable "Prod_Private_AZ" {
+  default = ["us-east-1c","us-east-1d"]
+  type = "list"
+}
+variable "Dev_Public_AZ" {
+  default = "us-east-1a"
+}
+variable "Dev_Private_AZ" {
+  default = "us-east-1b"
